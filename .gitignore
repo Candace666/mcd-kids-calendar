@@ -1,0 +1,35 @@
+# ===== 敏感信息：绝对不可提交 =====
+.env
+.env.*
+*.token
+*_token.txt
+secrets/
+config.json
+
+# Token 可能被误粘贴进日志或中间文件
+*.log
+raw_*.txt
+probe_raw.json
+out_*.json
+
+# ===== 开发中间产物（本地保留，不提交）=====
+.dev-archive/
+.workbuddy/
+
+# ===== 个人数据：含真实门店/订单信息，按需决定 =====
+# 注意：docs/index.html 内的脱敏快照是演示必需的，不在此列
+
+# ===== 开发产物 =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# ===== 运行时缓存 =====
+.cache/
+tmp/
+*.log.lck
