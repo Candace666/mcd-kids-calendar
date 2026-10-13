@@ -145,10 +145,10 @@ python3 scripts/plan.py schedule --spu 1830 --store 1951035
 
 ```bash
 python3 scripts/plan.py card --spu 1830 --store 1951035 \
-  --date 2026-10-18 --people 5 --vertical
+  --date 2026-10-18 --people 5
 ```
 
-输出竖版（3:4，小红书/朋友圈）或横版（16:9，B 站演示）卡片 HTML，
+默认输出竖版（3:4，小红书/朋友圈）；加 `--horizontal` 输出横版（16:9，B 站演示）。
 以及一段可直接复制的分享文案。
 
 **为什么是「召集令」而不是「出行记录」**：实测 MCP 的 35 个 tool 中，

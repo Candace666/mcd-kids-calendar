@@ -248,7 +248,9 @@ def main():
     ap = argparse.ArgumentParser(description="麦麦遛娃地图 CLI")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
-    sub.add_parser("activities", help="拉取活动库").set_defaults(func=cmd_activities)
+    p = sub.add_parser("activities", help="拉取活动库")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_activities)
 
     p = sub.add_parser("stores", help="地图聚合门店")
     p.add_argument("--city", default=110100, type=int, help="城市编码，默认北京")
