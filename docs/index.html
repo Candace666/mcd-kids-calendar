@@ -28,6 +28,10 @@ font-family:ui-monospace,Menlo,monospace;font-size:11px}
 .stephead b{font-size:14.5px;color:var(--ink)}
 .stephead i{font-style:normal;font-size:11px;color:var(--ink3)}
 .note strong{color:var(--ink)}
+.starwrap{display:flex;flex-direction:column;align-items:center;gap:9px;margin-top:26px}
+.starbtn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#1A1A1A;font-size:14px;font-weight:800;text-decoration:none;padding:12px 30px;border-radius:999px;box-shadow:0 6px 18px rgba(255,199,44,.45);transition:.15s}
+.starbtn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,199,44,.6)}
+.startip{font-size:11px;color:var(--ink3);text-align:center;line-height:1.7}
 .phone{width:340px;background:var(--bg);border-radius:30px;overflow:hidden;position:relative;
 border:7px solid #1A1A1A;box-shadow:0 12px 40px rgba(0,0,0,.16);margin:0 auto}
 .scroll{height:660px;overflow-y:auto;overflow-x:hidden}
@@ -414,6 +418,11 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
   </div>
   <div class="note" style="font-size:10.5px;color:#8A8A8A">
     MCP 实测备注：标注 4-12 岁的活动实测 3 岁可报名（年龄仅展示）· 东单店实测可办 18 个活动（故做门店聚合）· MCP 无拼团邀请字段（召集令在 MCP 之外完成）· 场次 note 仅展示不解析（「提前 3 天」按真实可约日期倒推）
+  </div>
+
+  <div class="starwrap">
+    <a class="starbtn" href="https://github.com/Candace666/mcd-kids-calendar" target="_blank" rel="noopener">⭐ 在 GitHub 上点个 Star 支持</a>
+    <div class="startip">本作品参加麦当劳程序员创意开发大赛，排名只看 GitHub Star 数<br>一个 Star 就是一张实打实的票，点一下就好</div>
   </div>
 </div>
 
