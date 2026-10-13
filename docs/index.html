@@ -21,12 +21,13 @@ border-radius:9px;padding:11px 14px;margin-bottom:22px;font-size:11.5px;color:#7
 .datanote b{color:#5C4200}
 .ic{display:inline-block;background:#F4F4F4;padding:1px 5px;border-radius:4px;
 font-family:ui-monospace,Menlo,monospace;font-size:11px}
-.tabs{display:flex;gap:0;background:#fff;border-radius:26px;padding:4px;margin-bottom:22px;
-box-shadow:0 2px 10px rgba(0,0,0,.07);flex-wrap:wrap;justify-content:center}
-.tab{border:none;background:transparent;font-size:13px;padding:8px 18px;border-radius:20px;
-cursor:pointer;color:var(--ink2);font-family:inherit;font-weight:500;transition:.15s;white-space:nowrap}
-.tab.on{background:var(--gold);color:#1A1A1A;font-weight:700}
-.screen{display:none}.screen.on{display:block}
+.gallery{display:flex;flex-wrap:wrap;gap:34px 26px;justify-content:center;align-items:flex-start;width:100%;max-width:1560px}
+.stage{display:flex;flex-direction:column;align-items:center}
+.stephead{display:flex;flex-direction:column;align-items:center;gap:5px;margin-bottom:14px;text-align:center}
+.stepchip{display:inline-block;background:var(--gold);color:#1A1A1A;font-size:11px;font-weight:800;letter-spacing:.06em;padding:3px 12px;border-radius:999px}
+.stephead b{font-size:14.5px;color:var(--ink)}
+.stephead i{font-style:normal;font-size:11px;color:var(--ink3)}
+.note strong{color:var(--ink)}
 .phone{width:340px;background:var(--bg);border-radius:30px;overflow:hidden;position:relative;
 border:7px solid #1A1A1A;box-shadow:0 12px 40px rgba(0,0,0,.16);margin:0 auto}
 .scroll{height:660px;overflow-y:auto;overflow-x:hidden}
@@ -175,7 +176,7 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
 <div class="wrap">
   <div class="pagehead">
     <h1>麦麦遛娃地图 · 产品演示</h1>
-    <p>下方四个页签对应完整产品流程，可交互操作。<b>所有门店坐标、活动名称、封面图、可约日期与剩余名额均为麦当劳 MCP Server 真实接口采集。</b></p>
+    <p>下方按完整产品流程横排展示四屏，可交互操作。<b>所有门店坐标、活动名称、封面图、可约日期与剩余名额均为麦当劳 MCP Server 真实接口采集。</b></p>
   </div>
   <div class="datanote">
     <b>数据说明：</b>门店经纬度、活动封面图（spuImage）、可约日期、场次时段与剩余名额，
@@ -184,14 +185,10 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
     地图为按真实经纬度等距换算绘制的相对位置示意图，不调用任何在线地图服务，页面不含任何密钥。
     实际门店供给以麦当劳官方实时结果为准。本页为参赛作品，非麦当劳官方产品。
   </div>
-  <div class="tabs">
-    <button class="tab on" onclick="show(0)">① 对话提取线索</button>
-    <button class="tab" onclick="show(1)">② 地图选门店</button>
-    <button class="tab" onclick="show(2)">③ 活动选档</button>
-    <button class="tab" onclick="show(3)">④ 召集令 / 下单</button>
-  </div>
 
-  <div class="screen on">
+  <div class="gallery">
+  <div class="stage">
+    <div class="stephead"><span class="stepchip">STEP 1</span><b>发现 · 对话提取线索</b><i>一句话说出日期、地点与活动类型</i></div>
     <div class="phone"><div class="scroll">
       <div class="status"><span>9:41</span><span>●●●⏻</span></div>
       <div class="navbar"><span class="bk">‹</span><span class="ttl">麦麦遛娃地图</span></div>
@@ -246,7 +243,8 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
     </div></div>
   </div>
 
-  <div class="screen">
+  <div class="stage">
+    <div class="stephead"><span class="stepchip">STEP 2</span><b>选点 · 地图看附近门店</b><i>真实经纬度 · 门店聚合 · 按距离排序</i></div>
     <div class="phone"><div class="scroll">
       <div class="status"><span>9:41</span><span>●●●⏻</span></div>
       <div class="navbar"><span class="bk">‹</span><span class="ttl">10/18 下午可约</span><span class="rt">东单</span></div>
@@ -287,7 +285,8 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
     </div></div>
   </div>
 
-  <div class="screen">
+  <div class="stage">
+    <div class="stephead"><span class="stepchip">STEP 3</span><b>选档 · 场次余位透明</b><i>真实可约场次 · 剩余名额 · 周末优先</i></div>
     <div class="phone"><div class="scroll">
       <div class="status"><span>9:41</span><span>●●●⏻</span></div>
       <div class="hero">
@@ -303,13 +302,7 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
           <span style="font-size:11px;color:var(--ink3)" id="heroUnit"></span>
         </div>
       </div>
-      <div style="background:#fff;margin:0 14px;padding:11px 12px;border-radius:12px;margin-top:9px">
-        <div style="font-size:11.5px;font-weight:600;margin-bottom:9px">📍 北京东单北大街餐厅</div>
-        <div style="font-size:10.5px;color:var(--ink2);line-height:1.9">
-          东单北大街112、114号 · 距你 <b>1.2km</b><br>
-          ⭐ 本店共可办 <b>18</b> 个活动
-        </div>
-      </div>
+      <div id="storeInfo" style="background:#fff;margin:0 14px;padding:11px 12px;border-radius:12px;margin-top:9px"></div>
       <div style="padding:11px 14px 4px;font-size:10.5px;color:var(--ink3);font-weight:600">选日期（实测可约）</div>
       <div class="dayslot" id="dateSlot"></div>
       <div style="padding:10px 14px 4px;font-size:10.5px;color:var(--ink3);font-weight:600">选时段（按当日真实场次）</div>
@@ -337,7 +330,8 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
     </div></div>
   </div>
 
-  <div class="screen">
+  <div class="stage">
+    <div class="stephead"><span class="stepchip">STEP 4</span><b>召集 · 生成分享卡片</b><i>凑人提醒 · 召集令 · 下单前置校验</i></div>
     <div class="phone"><div class="scroll">
       <div class="status"><span>9:41</span><span>●●●⏻</span></div>
       <div class="navbar"><span class="bk">‹</span><span class="ttl">选择下一步</span></div>
@@ -405,12 +399,21 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
   </div>
 
   <div class="note">
-    <b>产品要点</b>
-    ① <b>年龄不作条件</b>：实测标注 4-12 岁的活动 3 岁可报名成功，年龄仅作展示与排序软权重<br>
-    ② <b>门店聚合</b>：实测东单一家店可办 18 个活动，必须折叠为活动数角标，否则页面全是重复 Marker<br>
-    ③ <b>拼团下限是 partyMin+1</b>：官方写「超过 5 位儿童」，5 人不成团，要 6 人<br>
-    ④ <b>MCP 不支持拼团邀请</b>：无 inviteCode/shareUrl 字段，凑人必然在 MCP 之外，故卡片是「召集令」而非「出行记录」<br>
-    ⑤ <b>note 只展示不判断</b>：「提前 3 天」用真实可约日期倒推，不解析 note 文字
+    <b>核心功能</b>
+    🔍 <strong>对话找活动</strong> — 一句话说出「这周六下午 / 东单 / 训练营」，自动提取日期、地点、类型，年龄不作硬条件<br>
+    🗺️ <strong>地图选门店</strong> — 7116 组门店×活动聚合为 472 家门店，一店多活动折叠成角标，按距离排序<br>
+    🎫 <strong>场次选档</strong> — 每场展示真实时段、价格与剩余名额，周末场次优先推荐<br>
+    📣 <strong>召集令成团</strong> — 生成可分享召集令卡片，人数不够自动提示「还差几人」，下单前六项前置校验
+  </div>
+  <div class="note">
+    <b>产品亮点</b>
+    ✅ <strong>全真实数据</strong>：门店坐标、活动、场次、余位均来自麦当劳 MCP Server 实时接口，非 mock 演示<br>
+    ✅ <strong>聚合去重</strong>：同一门店多个活动折叠展示，避免重复 Marker 淹没地图<br>
+    ✅ <strong>官方规则还原</strong>：凑团下限按「超过 5 位儿童」判定，5 人不成团、按 6 人提示差值<br>
+    ✅ <strong>安全设计</strong>：页面零密钥、卡片不含券码凭证字段、下单操作需二次确认
+  </div>
+  <div class="note" style="font-size:10.5px;color:#8A8A8A">
+    MCP 实测备注：标注 4-12 岁的活动实测 3 岁可报名（年龄仅展示）· 东单店实测可办 18 个活动（故做门店聚合）· MCP 无拼团邀请字段（召集令在 MCP 之外完成）· 场次 note 仅展示不解析（「提前 3 天」按真实可约日期倒推）
   </div>
 </div>
 
@@ -428,9 +431,8 @@ function fallbackCover(name){
 }
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function show(i){
-  document.querySelectorAll('.tab').forEach((t,k)=>t.classList.toggle('on',k===i));
-  document.querySelectorAll('.screen').forEach((s,k)=>s.classList.toggle('on',k===i));
-  window.scrollTo({top:0,behavior:'smooth'});
+  const stages=document.querySelectorAll('.stage');
+  if(stages[i]) stages[i].scrollIntoView({behavior:'smooth',block:'start'});
 }
 function seatLevel(l,m){
   if(l==null||!m) return '';
@@ -515,7 +517,7 @@ function select(i){
   if(mk){mk.dataset.orig=mk.getAttribute('fill');mk.setAttribute('fill','#E5342A');
     const t=mk.nextElementSibling; if(t) t.setAttribute('fill','#fff');}
 }
-function openAct(si,spuId){
+function openAct(si,spuId,noScroll){
   const st=SNAP.stores[si]; if(!st) return;
   const a=st.activities.find(x=>String(x.spuId)===String(spuId));
   if(!a) return;
@@ -532,6 +534,11 @@ function openAct(si,spuId){
   document.getElementById('dateSlot').innerHTML=['10-16','10-18','10-19','10-22','10-25']
     .map((d,i)=>'<div class="fchip datechip'+(i===1?' on we':'')+'"><span class="d">'+d.split('-')[1]+'</span>'+
     ['周四','周六','周日','周三','周六'][i]+'<span class="n">可约</span></div>').join('');
+  document.getElementById('storeInfo').innerHTML=
+    '<div style="font-size:11.5px;font-weight:600;margin-bottom:9px">📍 '+esc(st.name)+'</div>'+
+    '<div style="font-size:10.5px;color:var(--ink2);line-height:1.9">'+esc(st.address||'')+
+    (st.distance_text?' · 距你 <b>'+esc(st.distance_text)+'</b>':'')+
+    '<br>⭐ 本店共可办 <b>'+st.activities.length+'</b> 个活动</div>';
   document.getElementById('sessionList').innerHTML=(a.sessions||[]).map(function(s,k){
     const lvl=seatLevel(s.left_num,s.party_max);
     return '<div class="sess'+(k===0?' sel':'')+'"><div class="sesstop">'+
@@ -539,7 +546,7 @@ function openAct(si,spuId){
       '<div class="sessav '+lvl+'">剩余 '+s.left_num+'/'+s.party_max+'</div></div>'+
       '<div class="sessrow"><span>'+s.party_min+'-'+s.party_max+' 人</span><span>¥'+s.price_yuan.toFixed(0)+'/人</span></div></div>';
   }).join('');
-  show(2);
+  if(!noScroll) show(2);
 }
 function setPeople(n,el){
   document.querySelectorAll('.numchip').forEach(c=>c.classList.remove('on'));
@@ -550,6 +557,10 @@ function setPeople(n,el){
     : '已选 '+n+' 人，<b>还差 '+(need-n)+' 人</b>才能成团';
 }
 renderMap();renderList();
+(function(){
+  const si=SNAP.stores.findIndex(s=>(s.name||'').indexOf('东单')>=0);
+  if(si>=0&&SNAP.stores[si].activities.length) openAct(si,SNAP.stores[si].activities[0].spuId,true);
+})();
 </script>
 </body>
 </html>
