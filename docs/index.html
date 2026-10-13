@@ -13,7 +13,9 @@
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",sans-serif;
 background:#E8E8E8;color:var(--ink);line-height:1.6}
 .wrap{display:flex;flex-direction:column;align-items:center;padding:26px 16px 60px}
-.pagehead{max-width:1120px;width:100%;margin-bottom:20px}
+.pagehead{max-width:1120px;width:100%;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.phmain{max-width:760px}
+@media(max-width:860px){.pagehead{flex-direction:column}.starwrap{align-items:flex-start}.startip{text-align:left}}
 .pagehead h1{font-size:19px;font-weight:700;letter-spacing:-.3px}
 .pagehead p{font-size:12.5px;color:var(--ink2);margin-top:6px;line-height:1.75}
 .datanote{max-width:1120px;width:100%;background:#FFF8E5;border-left:3px solid var(--gold);
@@ -28,10 +30,10 @@ font-family:ui-monospace,Menlo,monospace;font-size:11px}
 .stephead b{font-size:14.5px;color:var(--ink)}
 .stephead i{font-style:normal;font-size:11px;color:var(--ink3)}
 .note strong{color:var(--ink)}
-.starwrap{display:flex;flex-direction:column;align-items:center;gap:9px;margin-top:26px}
-.starbtn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#1A1A1A;font-size:14px;font-weight:800;text-decoration:none;padding:12px 30px;border-radius:999px;box-shadow:0 6px 18px rgba(255,199,44,.45);transition:.15s}
-.starbtn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,199,44,.6)}
-.startip{font-size:11px;color:var(--ink3);text-align:center;line-height:1.7}
+.starwrap{display:flex;flex-direction:column;align-items:flex-end;gap:7px;flex-shrink:0;padding-top:4px}
+.starbtn{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#1A1A1A;font-size:13.5px;font-weight:800;text-decoration:none;padding:11px 24px;border-radius:999px;white-space:nowrap;box-shadow:0 5px 16px rgba(255,199,44,.5);transition:.15s}
+.starbtn:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(255,199,44,.65)}
+.startip{font-size:10.5px;color:var(--ink3);text-align:right;line-height:1.6}
 .phone{width:340px;background:var(--bg);border-radius:30px;overflow:hidden;position:relative;
 border:7px solid #1A1A1A;box-shadow:0 12px 40px rgba(0,0,0,.16);margin:0 auto}
 .scroll{height:660px;overflow-y:auto;overflow-x:hidden}
@@ -179,8 +181,14 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
 <body>
 <div class="wrap">
   <div class="pagehead">
-    <h1>麦麦遛娃地图 · 产品演示</h1>
-    <p>下方按完整产品流程横排展示四屏，可交互操作。<b>所有门店坐标、活动名称、封面图、可约日期与剩余名额均为麦当劳 MCP Server 真实接口采集。</b></p>
+    <div class="phmain">
+      <h1>麦麦遛娃地图 · 产品演示</h1>
+      <p>下方按完整产品流程横排展示四屏，可交互操作。<b>所有门店坐标、活动名称、封面图、可约日期与剩余名额均为麦当劳 MCP Server 真实接口采集。</b></p>
+    </div>
+    <div class="starwrap">
+      <a class="starbtn" href="https://github.com/Candace666/mcd-kids-calendar" target="_blank" rel="noopener">⭐ 点个 Star 支持</a>
+      <div class="startip">参赛作品 · 排名只看 GitHub Star 数</div>
+    </div>
   </div>
   <div class="datanote">
     <b>数据说明：</b>门店经纬度、活动封面图（spuImage）、可约日期、场次时段与剩余名额，
@@ -401,6 +409,7 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
       <button class="bottombtn">确认下单（六项前置校验）</button>
     </div></div>
   </div>
+  </div>
 
   <div class="note">
     <b>核心功能</b>
@@ -420,10 +429,6 @@ margin-top:20px;font-size:11.5px;color:#555;line-height:1.8}
     MCP 实测备注：标注 4-12 岁的活动实测 3 岁可报名（年龄仅展示）· 东单店实测可办 18 个活动（故做门店聚合）· MCP 无拼团邀请字段（召集令在 MCP 之外完成）· 场次 note 仅展示不解析（「提前 3 天」按真实可约日期倒推）
   </div>
 
-  <div class="starwrap">
-    <a class="starbtn" href="https://github.com/Candace666/mcd-kids-calendar" target="_blank" rel="noopener">⭐ 在 GitHub 上点个 Star 支持</a>
-    <div class="startip">本作品参加麦当劳程序员创意开发大赛，排名只看 GitHub Star 数<br>一个 Star 就是一张实打实的票，点一下就好</div>
-  </div>
 </div>
 
 <script>
