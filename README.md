@@ -11,6 +11,10 @@
 
 **别人告诉你哪里有活动；我们帮你把场锁上、把人喊来。**
 
+> ⭐ **觉得有用的话，点个 Star 支持一下** —— 本作品正在参加**麦当劳程序员创意开发大赛**，排名只看 GitHub Star 数，一个 Star 就是一张实打实的票。
+>
+> 👉 https://github.com/Candace666/mcd-kids-calendar
+
 | 纯 Python 标准库 |   麦当劳官方 MCP  |     全链路真实跑通    |     零第三方依赖    |
 | :----------: | :----------: | :------------: | :-----------: |
 |   3.9+ 即可运行  | `mcp.mcd.cn` | 真实门店 / 场次 / 余位 | 无 pip install |
@@ -23,7 +27,7 @@
 
 ## 🎬 先看效果：在线演示（免安装、免 Token）
 
-> **[🍔 打开在线演示页](https://Candace666.github.io/mcd-kids-calendar/)** —— 浏览器直接点开四个页签：  
+> **[🍔 打开在线演示页](https://Candace666.github.io/mcd-kids-calendar/)** —— 浏览器打开即**四屏横排**一次看完完整流程：  
 > ① 对话提取线索 → ② 地图选门店 → ③ 活动选档 → ④ 召集令 / 下单。  
 > 页面为 2026-10-12 真实 Token 跑通的快照（门店经纬度、活动封面、可约日期、剩余名额均来自接口），  
 > **不是实时查询**，已明确标注。
@@ -481,5 +485,11 @@ mcd-kids-calendar/
 
 **Contest Declaration** · 参赛声明见 [CONTEST\_DECLARATION.md](./CONTEST_DECLARATION.md)
 
-```
-```
+---
+
+## ⭐ 如果这个项目帮到了你
+
+**点个 Star 就是最大的支持** —— 本作品参加麦当劳程序员创意开发大赛，排名只看 GitHub Star 数。  
+顺手点一下，也能让更多带娃的家长看到它。
+
+👉 https://github.com/Candace666/mcd-kids-calendar
